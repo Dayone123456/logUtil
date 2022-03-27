@@ -12,18 +12,18 @@ import java.util.*
  * @version V1.0.0  2021-10-22
  * @since [产品/模块版本]
  */
-object Log {
+object MyLogger {
     private val MIN_STACK_OFFSET = 3
 
     var defaultTag = "LogUtil"
     private val lineSeparator = System.getProperty("line.separator", "/n")
 
-    val V = Log.VERBOSE
-    val D = Log.DEBUG
-    val I = Log.INFO
-    val W = Log.WARN
-    val E = Log.ERROR
-    val A = Log.ASSERT
+    val V = MyLogger.VERBOSE
+    val D = MyLogger.DEBUG
+    val I = MyLogger.INFO
+    val W = MyLogger.WARN
+    val E = MyLogger.ERROR
+    val A = MyLogger.ASSERT
 
     private val TOP_BORDER =
         "╔═══════════════════════════════════════════════════════════════════════════════════════════════════"
@@ -87,7 +87,7 @@ object Log {
         while (i < trace.size) {
             val e = trace[i]
             val name = e.className
-            if (name != Log::class.java.name) {
+            if (name != MyLogger::class.java.name) {
                 return i
             }
             i++
@@ -154,15 +154,15 @@ object Log {
     }
 
     fun printLog(flag: Int, tag: String, msg: String = processTagAndHead()) {
-        Log.println(flag, tag, LEFT_BORDER + msg)
+        MyLogger.println(flag, tag, LEFT_BORDER + msg)
     }
 
     fun printBottom(flag: Int, tag: String) {
-        Log.println(flag, tag, BOTTOM_BORDER)
+        MyLogger.println(flag, tag, BOTTOM_BORDER)
     }
 
     fun printTop(flag: Int, tag: String) {
-        Log.println(flag, tag, TOP_BORDER)
+        MyLogger.println(flag, tag, TOP_BORDER)
     }
 
     fun showLevel(level: Int) {
