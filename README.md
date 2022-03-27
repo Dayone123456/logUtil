@@ -1,20 +1,25 @@
-# logUtil
-FOR GRADLE
+# FOR GRADLE
 Step 1. Add it in your root build.gradle at the end of repositories：
-   	allprojects {
+`
+   	allprojects {  
+	
 		repositories {
 			...
 			maven { url 'https://jitpack.io' }
 		}
 	}
-
+`	
+	
 Step 2. Add the dependency：
 	dependencies {
+	
 	        implementation 'com.github.Dayone123456:logUtil:Tag'
 	}
 
-FOR MAVEN
+
+# FOR MAVEN
 Step 1. Add it in your project
+
 	<repositories>
 		<repository>
 		    <id>jitpack.io</id>
@@ -23,6 +28,7 @@ Step 1. Add it in your project
 	</repositories>
 
 Step 2. Add the dependency：
+
 	<dependency>
 	    <groupId>com.github.Dayone123456</groupId>
 	    <artifactId>logUtil</artifactId>
